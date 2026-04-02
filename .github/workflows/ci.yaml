@@ -1,16 +1,8 @@
 name: CI
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+on: [push, pull_request]
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-      - name: Default step
-        run: echo "Basic CI workflow setup"
+      - uses: actions/checkout@v4
+      - run: echo "Basic CI Step"
